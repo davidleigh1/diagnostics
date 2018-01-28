@@ -1,0 +1,137 @@
+.row {
+    border: 0px red dotted;
+}
+
+
+/* FORM + INPUTS */
+
+a.btn {
+    border-color: #ccc;
+}
+
+select.btn {
+    border-color: #ccc;
+    text-align: left;
+    border-radius: 4px !important;
+    padding: 6px 6px !important;
+}
+
+.action-button-group {
+    margin: 20px 0px;
+    font-variant: all-small-caps;
+}
+
+#btnSearch {
+    height: 4em;
+    font-size: large;
+}
+
+.id-input-field {
+    display:inline-block;
+}
+
+.btn-reset {
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* CLEAR BUTTON STYLES */
+
+::-ms-clear {
+    display: none;
+}
+
+.form-control-clear {
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+    color: #286090;
+}
+
+/* GRID */
+
+.padding-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.padding-sm {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.padding-md {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+/* TEST LINES */
+
+.test-line {
+    border: 1px gray solid;
+    padding: 5px;
+    border-radius: 5px;
+    /* background-color: #b3e5fc; */
+    margin-top: 5px;
+}
+
+.line-name {
+    font-weight: bold;
+}
+
+.x2 {
+    font-variant: all-small-caps;
+}
+
+/* TEST RESULTS */
+
+.test-results {
+    border: 1px gray solid;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #b3e5fc;
+    margin-top: 10px;
+}
+
+.btn-test {
+    font-variant: small-caps;
+    padding-right: 10px;
+}
+
+.iframe-small {
+    width: 100%;
+    height: 100px;
+}
+
+.iframe-medium {
+    width: 100%;
+    height: 300px;
+}
+
+.iframe-large {
+    width: 100%;
+    height: 600px;
+}
+
+
+
+/* FOOTER */
+
+.footer {
+    border-top: 2px solid #ddd;
+    padding: 30px 0;
+}
+
+pre.excluding_users_code {
+    width: 350px;
+}
+
+.footer strike {
+    color: green;
+}
+
+.footer strike:before {
+    content: "\2713";
+    margin-right: 6px;
+}

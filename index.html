@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Driver Diagnostics</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="js/script.js"></script>
+	</head>
+	
+	<body>
+		<div class="container" id="container-fluid">
+			
+			<!-- Header -->
+			<div class="row">
+				<center><h2><span class="glyphicon glyphicon-user"></span> Driver Diagnostics</h2></center>
+				<hr>
+				<center>
+					For more information, please see: <a href="https://wiki.bringg.website/index.php/Driver_Diagnostics" target="_blank">https://wiki.bringg.website/index.php/Driver_Diagnostics</a>
+				</center>
+				<hr>
+			</div>
+			<!-- /Header -->
+			
+			<!-- Form -->
+			<div class="row">
+				
+				<!-- SERVER REGION -->
+				<div class="col-sm-3 padding-0 btn-group-vertical btn_group_server" id="btn_group_server">
+					<label for="server_farm">Server Region:</label> 
+					<select class="btn btn-group bootstrap-select" id="server_farm" name="server_farm">
+						<option value="us" data-domain="https://dash.bringg.com"  selected="selected">US (https://dash.bringg.com/)</option>
+						<option value="eu" data-domain="https://prod-eu1-redash.bringg.com">EU (https://prod-eu1-redash.bringg.com)</option>
+						<!-- <option value="other">Other</option> -->
+					</select>
+				</div>
+				
+				<!-- USER SCOPE -->
+				<div class="col-sm-4 padding-md btn_group_scope btn-group-vertical" id="btn_group_scope">
+					<label for="user_scope">User Scope:</label>
+					<select class="btn btn-group bootstrap-select" id="user_scope" name="user_scope">
+						<option value="all_merchant" data-field="btn-group-merchant-id">All Merchant Users</option>
+						<option value="all_team" data-field="btn-group-team-id">All Team Users</option>
+						<option value="list_of_users" data-field="btn-group-user-list">Comma Separated Users</option>
+						<option value="single_user" data-field="btn-group-user-id">Single User</option>
+					</select>
+				</div>
+				
+				<!-- MERCHANT ID -->
+				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-merchant-id" id="btn-group-merchant-id">
+					<div class="form-group has-feedback has-clear">				
+						<label for="merchant_id">Merchant ID:</label>
+						<input type="text" class="form-control" id="merchant_id" onkeyup="" placeholder="Enter a Merchant ID here">
+						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>					
+					</div>
+				</div>
+				
+				<!-- TEAM ID -->
+				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-team-id" id="btn-group-team-id">
+					<div class="form-group has-feedback has-clear">				
+						<label for="team_id">Team ID:</label>
+						<input type="text" class="form-control" id="team_id" onkeyup="" placeholder="Enter a Team ID here">
+						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>					
+					</div>
+				</div>
+				
+				<!-- COMMA SEPARATED USERS ID -->
+				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-user-list" id="btn-group-user-list">
+					<div class="form-group has-feedback has-clear">				
+						<label for="user_list">Comma Separated User IDs:</label>
+						<input type="text" class="form-control" id="user_list" onkeyup="" placeholder="Enter a Comma Separated List of User IDs here">
+						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
+					</div>
+				</div>
+			
+				<!-- USER ID -->
+				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-user-id" id="btn-group-user-id">
+					<div class="form-group has-feedback has-clear">
+						<label for="user_id">User ID:</label>
+						<input type="text" class="form-control" id="user_id" onkeyup="" placeholder="Enter a User ID here">
+						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
+					</div>
+				</div>
+			
+			</div>
+			<!-- /Form -->
+
+			<!-- Advanced Settings -->
+			<div class="row">
+				<!-- <div class="col-sm-2 padding-0">
+					<h4>Advanced Settings</h4>
+				</div> -->
+				<div class="col-sm-12 well">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="" disabled="disabled"> Active30 - Only users with activity in the last 30 days 
+						</label>
+					</div>
+					
+					
+					
+					<!-- <legend class="small">Test Results Size</legend> -->
+					<div class="btn-group" data-toggle="buttons">
+						<div>Test Results Frame Size</div>
+						<label class="btn btn-default btn-sm">
+							<input type="radio" name="iframe-size" id="iframe-small" data-test="all" value="iframe-small" autocomplete="off"> Small
+						</label>
+						<label class="btn btn-default btn-sm">
+							<input type="radio" name="iframe-size" id="iframe-medium" data-test="all" value="iframe-medium" autocomplete="off" checked="checked"> Medium
+						</label>
+						<label class="btn btn-default btn-sm">
+							<input type="radio" name="iframe-size" id="iframe-large" data-test="all" value="iframe-large" autocomplete="off"> Large
+						</label>
+					</div>
+					
+				</div>				
+			</div>
+			<!-- /Advanced Settings -->
+
+			<!-- Test List -->
+			<div class="row test-lines">
+				<legend>Available Diagnotic Tests:</legend>
+			</div>
+			<!-- /Test List -->
+
+
+
+			<!-- Form SUBMIT Button -->
+			<div class="row">
+				
+				<!-- FORM BUTTON GROUP -->
+				<div class="action-button-group">
+					<button type="button" id="btnSearch" class="btn btn-primary btn-block analyze_all"><span class="glyphicon glyphicon-play"></span> ANALYZE ALL </button>
+				</div>
+				
+			</div>
+			<!-- /Analyze -->
+
+			<!-- RESULTS -->
+			<div class="row results">
+				
+			</div>
+			<!-- /RESULTS -->
+
+
+			
+
+		
+			<!-- FOOTER -->
+			<div class="row footer padding-0 small">
+				<ul>
+					<li>SQL / REDASH GUIDELINES:
+						<ul>
+							<li><strong>DO NOT INCLUDE API KEYS IN ANY QUERIES! THIS IS *NOT* AN EXTERNAL TOOL! </strong></li>
+							<li>Exclude deleted and all non-drivers. Example: <pre class="excluding_users_code">AND users.delete_at IS NULL<br>AND users.dispatcher IS FALSE<br>AND users.driver IS TRUE<br>AND users.admin IS FALSE<br>AND users.mobile_version IS NOT NULL</pre></li>
+							<li>This Driver Diagnostics page uses Redash's '<a href="http://help.redash.io/article/44-query-parameters">Query Parameters</a>' which allow Redash to accept parameters in the URL which are then injected into the query using <code>{{macros}}</code>. For example, in your query you could use <code>WHERE users.merchant_id = <strong>{{merchant_id}}</strong></code> and then pass the value in the Redash URL with a preceding <code>p-</code> so for example <code>{{merchant_id}}</code> becomes <code><strong>p_</strong>merchant_id</code> in the URL such as in this example: <code>https://dash.bringg.com/queries/1515/source?<strong>p_merchant_id</strong>=11355</code> </li>
+							<li>Please add useful queries or snippers to BringgWiki: <a href="https://wiki.bringg.website/index.php/Redash_SQL_Reference">https://wiki.bringg.website/index.php/Redash_SQL_Reference</a></li>
+						</ul>
+					</li>
+					<li>Backlog:
+						<ul>
+							<li><strike>[JSON] Add Test Author</strike></li>
+							<li><strike>[JSON] Add Test Description</strike></li>
+							<li><strike>[TEST] 'Go to Top' button</strike></li>
+							<li><strike>[TEST] Small | Medium | Large iframe -- also in Advanced Global??</strike></li>
+							<li><strike>[TEST] Expand or Collapse iframe</strike></li>
+							<li><strike>[TEST] Selector to switch between TABLE and CHARTS</strike></li>
+							<li><strike>[TEST] Author + Description</strike></li>
+							<li><strike>[JSON] Add addresses (URLs) (in a sub-obj?) for both TABLE and CHART</strike></li>
+							<li><strike>[JSON] Add query_url to JSON</strike></li>
+							<li><strike>[TEST] Add query_url to Test Header (BUTTON to View + BUTTON to Open)</strike></li>
+							<li>[TAGS] List / Checkbox / Tag for each TEST</li>
+							<li>[TAGS] Include / Exclude thie TEST from 'All'</li>
+							<li>[TAGS] RUN NOW / Run only this TEST now</li>
+							<li>[TAGS] Click on the Tag to go to the TEST </li>
+							<li>[TAGS] Tags can be moved out of the 'Run All' tests</li>
+							<li>[HTML] Add #anchor to every TEST</li>
+							<li>[TEST] Open in New Tab</li>
+							<li>Checkbox 'Active last 30 days'</li>
+							<li>Submit Form on <kbd>ENTER</kbd> key in input field</li>
+							<li>Standard snippet to INCLUDE for 'Active last 30 days'</li>
+							<li>Include 'current app versions' in the request for comparison</li>
+							https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/examples/
+							http://formvalidation.io/examples/bootstrap-tagsinput/
+							https://www.jqueryscript.net/demo/Nice-Tags-Manager-Plugin-with-jQuery-Bootstrap-Bootstrap-Tags-Input/examples/
+							<li>[Q] How can I run just one selected TEST?</li>
+							<li>[JSON] Execute query [With All | On-Demand Only (slower queries)</li>
+							<li>[READ] <a href="http://help.redash.io/article/39-query-snippets-shortcuts" >http://help.redash.io/article/39-query-snippets-shortcuts</a></li>
+							<li>[READ] <a href="http://help.redash.io/article/45-query-filters"
+							>http://help.redash.io/article/45-query-filters</a></li>
+
+
+
+
+
+
+
+						</ul>
+					</li>
+					<li></li>
+				</ul>
+				driver_id = 72452<br>
+				merchant_id = 11355<br>
+				merchant_id = 10115<br>
+				
+			</div>
+			<!-- /FOOTER -->
+
+		</div>
+	</body>
+</html>
