@@ -202,16 +202,12 @@ jQuery(document).ready(function ($) {
 });
 
 
-
-
-
-
 /* -------------------------------- UTIL FUNCTIONS ---------------------------------------------------------------- */
 
 function scrollToAnchor(tagId) {
     var destinationTag = $('#' + tagId );
     $('html,body').animate({ scrollTop: destinationTag.offset().top }, 'slow');
-}
+};
 
 function openNewTab (url) {
     var win = window.open(url, '_blank');
@@ -222,7 +218,7 @@ function openNewTab (url) {
         /* Browser has blocked it */
         alert('Please allow popups to open new tab');
     }
-}
+};
 
 /* -------------------------------- CORE FUNCTIONS ---------------------------------------------------------------- */
 
@@ -349,11 +345,8 @@ function buildSearchUrl(testObj, chart_or_table_url = 'table_url') {
             return false;
             break;
     }
-
     url += domain + '/' + use_Url + '?' + params;
-    // console.info('URL: ', url, domain, use_Url, params);
     return url;
-
 };
 
 function insertTestLine(testObj) {
@@ -388,7 +381,7 @@ function insertTestLine(testObj) {
 
     // if (test_url) {
 
-/*         var isGraphAvailable = (testObj.chart_url) ? '' : 'disabled';
+    /*  var isGraphAvailable = (testObj.chart_url) ? '' : 'disabled';
         var isTableAvailable = (testObj.table_url) ? '' : 'disabled';
 
         var resize_results_radios = ''
@@ -422,7 +415,7 @@ function insertTestLine(testObj) {
             + iframe_html
             + result_footer_html
             + '</div >';
- */
+                */
         // console.info(row_html);
 
 
@@ -431,7 +424,6 @@ function insertTestLine(testObj) {
     //     console.info('Sorry! Unable to insert test line "' + testObj.name + '"');
     // }
 };
-
 
 function initFormFields() {
     /* Hide all ID fields */
@@ -460,8 +452,6 @@ function groupScopeChange(thisObj) {
     /* Show only the selected ID field  */
     $('.' + selectedScopeGroup).show();
 };
-
-
 
 function parse() {
     var string = document.getElementById("task_text").value;
@@ -531,12 +521,12 @@ function parse() {
 
     $('textarea.examples').hide();
 
-}
+};
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
-}
+};
 
 function reset() {
     window.location.reload();
-}
+};
