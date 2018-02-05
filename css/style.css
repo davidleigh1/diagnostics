@@ -35,6 +35,11 @@ select.btn {
     border-radius: 4px;
 }
 
+.flag {
+    height: 20px;
+    vertical-align: bottom;
+}
+
 /* CLEAR BUTTON STYLES */
 
 ::-ms-clear {
@@ -70,7 +75,8 @@ select.btn {
 
 .test-line {
     border: 1px gray solid;
-    padding: 5px;
+    /* padding: 5px; */
+    padding: 5px 10px 5px 10px;
     border-radius: 5px;
     /* background-color: #b3e5fc; */
     margin-top: 5px;
@@ -78,13 +84,46 @@ select.btn {
 
 .line-name {
     font-weight: bold;
+    font-size: 130%;
 }
 
 .x2 {
     font-variant: all-small-caps;
 }
 
+.line-icon {
+    margin: 3px 2px;
+    font-size: 20px;
+    height: 20px;    
+    vertical-align: bottom;
+}
+.show-icon {
+    display: inline-block;
+    margin: 3px 2px;
+    color: green;
+}
+.hide-icon {
+    display: none;
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+    opacity: 0.2;
+}
+
+
+
+
 /* TEST RESULTS */
+
+span.test-name {
+    margin-right: 10px;
+    vertical-align: baseline;
+}
+
+.test-flag {
+    height: 20px;
+    vertical-align: bottom;
+}
 
 .test-results {
     border: 1px gray solid;

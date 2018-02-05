@@ -4,16 +4,17 @@
 		<title>Driver Diagnostics</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="js/script.js"></script>
 	</head>
-	
+
 	<body>
 		<div class="container" id="container-fluid">
-			
+
 			<!-- Header -->
 			<div class="row">
 				<center><h2><span class="glyphicon glyphicon-user"></span> Driver Diagnostics</h2></center>
@@ -24,58 +25,58 @@
 				<hr>
 			</div>
 			<!-- /Header -->
-			
+
 			<!-- Form -->
 			<div class="row">
-				
+	
 				<!-- SERVER REGION -->
 				<div class="col-sm-3 padding-0 btn-group-vertical btn_group_server" id="btn_group_server">
-					<label for="server_farm">Server Region:</label> 
+					<label for="server_farm">Server Region: <img src="img/us_60x40.png" alt="" class="flag"></label> 
 					<select class="btn btn-group bootstrap-select" id="server_farm" name="server_farm">
-						<option value="us" data-domain="https://dash.bringg.com"  selected="selected">US (https://dash.bringg.com/)</option>
-						<option value="eu" data-domain="https://prod-eu1-redash.bringg.com">EU (https://prod-eu1-redash.bringg.com)</option>
+						<option value="us" data-domain="https://dash.bringg.com" data-flag="img/us_60x40.png" selected="selected">US (https://dash.bringg.com/)</option>
+						<option value="eu" data-domain="https://prod-eu1-redash.bringg.com" data-flag="img/eu_60x40.png" >EU (https://prod-eu1-redash.bringg.com)</option>
 						<!-- <option value="other">Other</option> -->
 					</select>
 				</div>
-				
+
 				<!-- USER SCOPE -->
 				<div class="col-sm-4 padding-md btn_group_scope btn-group-vertical" id="btn_group_scope">
 					<label for="user_scope">User Scope:</label>
 					<select class="btn btn-group bootstrap-select" id="user_scope" name="user_scope">
-						<option value="all_merchant" data-field="btn-group-merchant-id">All Merchant Users</option>
-						<option value="all_team" data-field="btn-group-team-id">All Team Users</option>
-						<option value="list_of_users" data-field="btn-group-user-list">Comma Separated Users</option>
-						<option value="single_user" data-field="btn-group-user-id">Single User</option>
+						<option value="merchant_id" data-field="btn-group-merchant-id">All Merchant Users</option>
+						<option value="team_id" data-field="btn-group-team-id">All Team Users</option>
+						<option value="user_list" data-field="btn-group-user-list">Comma Separated Users</option>
+						<option value="user_id" data-field="btn-group-user-id">Single User</option>
 					</select>
 				</div>
-				
+
 				<!-- MERCHANT ID -->
 				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-merchant-id" id="btn-group-merchant-id">
-					<div class="form-group has-feedback has-clear">				
+					<div class="form-group has-feedback has-clear">
 						<label for="merchant_id">Merchant ID:</label>
 						<input type="text" class="form-control" id="merchant_id" onkeyup="" placeholder="Enter a Merchant ID here">
-						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>					
+						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
 					</div>
 				</div>
-				
+
 				<!-- TEAM ID -->
 				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-team-id" id="btn-group-team-id">
-					<div class="form-group has-feedback has-clear">				
+					<div class="form-group has-feedback has-clear">
 						<label for="team_id">Team ID:</label>
 						<input type="text" class="form-control" id="team_id" onkeyup="" placeholder="Enter a Team ID here">
-						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>					
+						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
 					</div>
 				</div>
-				
+
 				<!-- COMMA SEPARATED USERS ID -->
 				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-user-list" id="btn-group-user-list">
-					<div class="form-group has-feedback has-clear">				
+					<div class="form-group has-feedback has-clear">
 						<label for="user_list">Comma Separated User IDs:</label>
 						<input type="text" class="form-control" id="user_list" onkeyup="" placeholder="Enter a Comma Separated List of User IDs here">
 						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
 					</div>
 				</div>
-			
+
 				<!-- USER ID -->
 				<div class="col-sm-5 padding-0 id-input-field btn-group-vertical btn-group-user-id" id="btn-group-user-id">
 					<div class="form-group has-feedback has-clear">
@@ -84,7 +85,7 @@
 						<span class="form-control-clear glyphicon glyphicon-remove form-control-feedback hidden"></span>
 					</div>
 				</div>
-			
+
 			</div>
 			<!-- /Form -->
 
@@ -130,25 +131,25 @@
 
 			<!-- Form SUBMIT Button -->
 			<div class="row">
-				
+
 				<!-- FORM BUTTON GROUP -->
 				<div class="action-button-group">
 					<button type="button" id="btnSearch" class="btn btn-primary btn-block analyze_all"><span class="glyphicon glyphicon-play"></span> ANALYZE ALL </button>
 				</div>
-				
+
 			</div>
 			<!-- /Analyze -->
 
 			<!-- RESULTS -->
 			<div class="row results">
-				
+
 			</div>
 			<!-- /RESULTS -->
 
 
-			
 
-		
+
+
 			<!-- FOOTER -->
 			<div class="row footer padding-0 small">
 				<ul>
@@ -205,7 +206,7 @@
 				driver_id = 72452<br>
 				merchant_id = 11355<br>
 				merchant_id = 10115<br>
-				
+
 			</div>
 			<!-- /FOOTER -->
 
